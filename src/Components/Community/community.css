@@ -1,0 +1,142 @@
+/* CommunityPage.css */
+
+/* General Styling */
+.community-page {
+    font-family: 'Arial, sans-serif';
+    color: #333;
+    padding: 20px;
+  }
+  
+  /* Intro Section */
+  .intro {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .intro h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .intro p {
+    font-size: 1.2em;
+  }
+  
+  /* Create Post Section */
+  .create-post {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .create-post h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .post-input {
+    width: 100%;
+    max-width: 600px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+  
+  .post-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .post-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Posts Section */
+  .posts {
+    margin-bottom: 40px;
+  }
+  
+  .posts h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .post-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .post-card p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+  
+  .timestamp {
+    color: #777;
+    font-size: 0.9em;
+  }
+  
+  /* Discussion Topics Section */
+  .discussion-topics {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .discussion-topics h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .topics-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .topic-card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .topic-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .topic-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .topic-card p {
+    font-size: 1.1em;
+  }
+  

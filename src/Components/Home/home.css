@@ -1,0 +1,144 @@
+/* HomePage.css */
+
+/* General Styling */
+.homepage {
+    font-family: 'Arial, sans-serif';
+    color: #333;
+    line-height: 1.6;
+    
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-image: url('../Assets/hero-bg.jpg'); /* Replace with your hero image URL */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    background-color: white;
+    color: #666;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  
+  /* Features Section */
+  .features {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+  
+  .features-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-card img {
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+  
+  .testimonials-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .testimonial-card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+  }
+  
+  .testimonial-card p {
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-card h4 {
+    font-size: 1em;
+    color: #666;
+  }
+  
+  /* Call-to-Action Section */
+  .cta {
+    padding: 60px 20px;
+    background-color: #27ae60;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .cta h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  
