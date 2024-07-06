@@ -35,3 +35,13 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
+class Connection(models.Model):
+    user_from = models.ForeignKey(User, related_name='connections_from', on_delete=models.CASCADE)
+    user_to = models.ForeignKey(User, related_name='connections_to', on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user_from', 'user_to')
+
+    def __str__(self):
+        return f"{self.user_from} -> {self.user_to}"

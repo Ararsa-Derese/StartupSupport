@@ -17,3 +17,11 @@ class RetrieveUserView(APIView):
     def get(self, request):
         user = UserSerializer(request.user)
         return Response(user.data, status=status.HTTP_200_OK)
+
+class ConnectionListCreateView(generics.ListCreateAPIView):
+    queryset = Connection.objects.all()
+    serializer_class = ConnectionSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(user_from=self.request.user)
