@@ -26,21 +26,25 @@ const Home = () => {
       <section className="features">
         <h2>Our Features</h2>
         <div className="features-grid">
-          <div className="feature-card">
-            <img src={expertise} alt="Expertise" />
-            <h3>Expertise on Demand</h3>
-            <p>Access top professionals across various fields.</p>
-          </div>
-          <div className="feature-card">
-            <img src={resources} alt="Resources" />
-            <h3>Vast Resources</h3>
-            <p>Leverage articles, webinars, and tools to accelerate your growth.</p>
-          </div>
-          <div className="feature-card">
-            <img src={community} alt="Community" />
-            <h3>Thriving Community</h3>
-            <p>Engage with fellow entrepreneurs and experts in our forums.</p>
-          </div>
+        <Link to="/professionals#top" className="feature-card">
+          <img src={expertise} alt="Expertise" />
+          <h3>Expertise on Demand</h3>
+          <p>Access top professionals across various fields.</p>
+        </Link>
+
+        <Link to="/resources#top" className="feature-card">
+          <img src={resources} alt="Resources" />
+          <h3>Vast Resources</h3>
+          <p>Leverage articles, webinars, and tools to accelerate your growth.</p>
+        </Link>
+
+        <Link to="/community#top" className="feature-card">
+          <img src={community} alt="Community" />
+          <h3>Thriving Community</h3>
+          <p>Engage with fellow entrepreneurs and experts in our forums.</p>
+        </Link>
+
+
         </div>
       </section>
 

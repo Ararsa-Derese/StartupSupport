@@ -1,16 +1,15 @@
-// Navbar.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './navbar.css'; // CSS for Navbar styling
-import logo from '../Assets/logo.png'; // Import the logo image
+import './navbar.css';
+import logo from '../Assets/milkii1.png';
 
-const Navbar = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+const Navbar = ({ isAuthenticated, onLogout, user }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
+  const handleLogout = () => {
+    onLogout(); // Update the authentication state in App.js
+    navigate('/login'); // Redirect to login page after logout
   };
 
   const handleSearch = (e) => {
@@ -25,31 +24,17 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-brand">
         <Link to="/">
-          <img src={logo} alt="Platform Logo" className="navbar-logo" />
+          <div className="navbar-logo"></div>
         </Link>
       </div>
-      <div className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>
-        <Link to="/" className="navbar-item">
-          Home
-        </Link>
-        <Link to="/about" className="navbar-item">
-          About Us
-        </Link>
-        <Link to="/professionals" className="navbar-item">
-          Professionals
-        </Link>
-        <Link to="/resources" className="navbar-item">
-          Resources
-        </Link>
-        <Link to="/community" className="navbar-item">
-          Community
-        </Link>
-        <Link to="/pricing" className="navbar-item">
-          Pricing
-        </Link>
-        <Link to="/contactus" className="navbar-item">
-          Contact Us
-          </Link>
+      <div className="navbar-links">
+        <Link to="/" className="navbar-item">Home</Link>
+        <Link to="/about" className="navbar-item">About Us</Link>
+        <Link to="/professionals" className="navbar-item">Professionals</Link>
+        <Link to="/resources" className="navbar-item">Resources</Link>
+        <Link to="/community" className="navbar-item">Community</Link>
+        <Link to="/pricing" className="navbar-item">Pricing</Link>
+        <Link to="/contactus" className="navbar-item">Contact Us</Link>
       </div>
       <div className="navbar-search">
         <form onSubmit={handleSearch}>
@@ -66,16 +51,24 @@ const Navbar = () => {
         </form>
       </div>
       <div className="navbar-user-menu">
-        <Link to="/login" className="navbar-item navbar-login">
-          Login
-        </Link>
-        <Link to="/signup" className="navbar-item navbar-signup">
-          Sign Up
-        </Link>
+        {!isAuthenticated ? (
+          <>
+            <Link to="/login" className="navbar-item navbar-login">Login</Link>
+            <Link to="/signup" className="navbar-item navbar-signup">Sign Up</Link>
+          </>
+        ) : (
+          <>
+            <Link to="/profile" className="navbar-item">
+              {user && user.image ? (
+                <img src={user.image} alt="User Avatar" className="navbar-user-avatar" />
+              ) : (
+                'Profile'
+              )}
+            </Link>
+            <button onClick={handleLogout} className="navbar-item navbar-logout">Logout</button>
+          </>
+        )}
       </div>
-      <button className="navbar-toggle" onClick={toggleMobileMenu}>
-        ☰
-      </button>
     </nav>
   );
 };

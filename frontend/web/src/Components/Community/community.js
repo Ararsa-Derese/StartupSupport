@@ -66,9 +66,10 @@ const Community = () => {
   );
 
   return (
-    <div className="community-page">
-      <section className="intro">
-        <h1>Community Hub</h1>
+    <div className="community-page" >
+      
+      <section className="intro" >
+        <h1 >Community Hub</h1>
         <p>Connect with fellow entrepreneurs, share insights, and learn from others.</p>
       </section>
 
