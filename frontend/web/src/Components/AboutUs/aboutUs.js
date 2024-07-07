@@ -1,6 +1,7 @@
 // pages/AboutUsPage.js
 import React from 'react';
 import './aboutUs.css'; 
+import { Link } from 'react-router-dom';
 import overview from '../Assets/company-overview.jpg';
 import member1 from '../Assets/team-member1.jpg';
 import member2 from '../Assets/team-member2.jpg';
@@ -61,7 +62,9 @@ const AboutUs = () => {
         <p>
           We are always looking for passionate individuals to join our team. If you're interested in making an impact in the entrepreneurial world, get in touch with us today.
         </p>
-        <button className="cta-button-about">Contact Us</button>
+        <Link to="/contactus" className="cta-button-about no-underline">
+        Contact Us
+      </Link>
       </section>
     </div>
   );

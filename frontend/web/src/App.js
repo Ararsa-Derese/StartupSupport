@@ -9,10 +9,11 @@ import Professionals from './Components/Professionals/professionals';
 import Community from './Components/Community/community';
 import Resources from './Components/Resources/resources';
 import Pricing from './Components/Pricing/pricing';
+import ContactUs from './Components/ContactUs/contactus';
 import Search from './Components/Search/search'; 
 import Login from './Components/Login/login'; 
 import Signup from './Components/SignUp/signup'; 
-
+import GetStarted from './Components/GetStarted/getStarted';
 const App = () => {
   return (
     <Router>
@@ -28,6 +29,8 @@ const App = () => {
           <Route path="/search" element={<Search />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} /> {/* Add Signup Route */}
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/getStarted" element={<GetStarted />} />
         </Routes>
       </div>
       <Footer />

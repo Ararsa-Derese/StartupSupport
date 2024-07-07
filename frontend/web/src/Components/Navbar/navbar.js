@@ -47,6 +47,9 @@ const Navbar = () => {
         <Link to="/pricing" className="navbar-item">
           Pricing
         </Link>
+        <Link to="/contactus" className="navbar-item">
+          Contact Us
+          </Link>
       </div>
       <div className="navbar-search">
         <form onSubmit={handleSearch}>

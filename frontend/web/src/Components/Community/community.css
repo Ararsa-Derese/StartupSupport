@@ -1,142 +1,231 @@
-/* CommunityPage.css */
+/* src/pages/community.css */
 
-/* General Styling */
 .community-page {
-    font-family: 'Arial, sans-serif';
-    color: #333;
-    padding: 20px;
-  }
-  
-  /* Intro Section */
-  .intro {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+/* Example CSS for a hero section background */
+.intro {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b, #ffcc33); /* New vibrant gradient */
+  color: #f4f4f4; /* General text color */
+  padding: 50px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
+}
+
+/* Text Styling for the Intro Section */
+.intro h1 {
+  font-size: 3em; 
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #ffffff; 
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); */
+}
+
+.intro p {
+  font-size: 1.5em; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  line-height: 1.6; 
+  color: #e6e6e6; 
+  /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);  */
+}
+
+@media (max-width: 768px) {
   .intro h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 2.5em; /* Slightly smaller font size for mobile */
   }
-  
+
   .intro p {
-    font-size: 1.2em;
+    font-size: 1.2em; /* Adjust font size for readability on smaller screens */
   }
-  
-  /* Create Post Section */
-  .create-post {
-    margin-bottom: 40px;
-    text-align: center;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .create-post h2 {
+  to {
+    opacity: 1;
+  }
+}
+
+
+.intro h1 {
+  font-size: 2.5em;
+  color: #2c3e50;
+}
+
+.intro p {
+  font-size: 1.2em;
+  color: #7f8c8d;
+}
+
+.create-post, .search-posts {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.post-input {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.post-button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.post-button:hover {
+  background-color: #2980b9;
+}
+
+.search-input-community {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.posts {
+  margin-top: 40px;
+}
+
+.posts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.post-card {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-card h3 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+}
+
+.post-card p {
+  margin: 0 0 10px 0;
+  color: #7f8c8d;
+}
+
+.timestamp {
+  font-size: 0.9em;
+  color: #95a5a6;
+}
+
+.post-interactions {
+  margin-top: 15px;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  color: #3498db;
+  cursor: pointer;
+  font-size: 1em;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.like-button:hover {
+  color: #2980b9;
+}
+
+.comments-section {
+  margin-top: 10px;
+}
+
+.comments-section input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.comments-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.comments-list li {
+  background-color: #dce2e6;
+  padding: 5px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.discussion-topics {
+  margin-top: 50px;
+}
+
+.topics-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.topic-card {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 5px;
+  flex: 1;
+  max-width: 30%;
+  min-width: 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card h3 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+}
+
+.topic-card p {
+  color: #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro h1 {
     font-size: 2em;
-    margin-bottom: 20px;
   }
-  
-  .post-input {
-    width: 100%;
-    max-width: 600px;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    margin-bottom: 20px;
-  }
-  
-  .post-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .post-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Posts Section */
-  .posts {
-    margin-bottom: 40px;
-  }
-  
-  .posts h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
+
   .posts-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    grid-template-columns: 1fr;
   }
-  
-  .post-card {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .post-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .post-card p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-  }
-  
-  .timestamp {
-    color: #777;
-    font-size: 0.9em;
-  }
-  
-  /* Discussion Topics Section */
-  .discussion-topics {
-    margin-bottom: 40px;
-    text-align: center;
-  }
-  
-  .discussion-topics h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
+
   .topics-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
-  
-  .topic-card {
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .topic-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .topic-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .topic-card p {
-    font-size: 1.1em;
-  }
-  
+}

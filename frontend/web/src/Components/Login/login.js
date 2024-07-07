@@ -30,7 +30,7 @@ const Login = () => {
       const response = await mockLogin(email, password);
       if (response.success) {
         // Redirect to the home page or dashboard after successful login
-        navigate('/');
+        navigate('/home');
       }
     } catch (error) {
       setError(error.message || 'An error occurred');

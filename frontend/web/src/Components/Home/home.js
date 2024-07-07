@@ -6,6 +6,7 @@ import expertise from '../Assets/expertise.jpg';
 import resources from '../Assets/resources.jpg'; 
 import community from '../Assets/community.jpg'; 
 
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -16,7 +17,8 @@ const Home = () => {
         <div className="hero-content">
           <h1>Welcome to Your Entrepreneurial Journey</h1>
           <p>Connecting you with professionals to guide your business growth.</p>
-          <button className="cta-button">Get Started</button>
+          <Link to="/getStarted" className="cta-button">Get Started</Link>
+
         </div>
       </section>
 

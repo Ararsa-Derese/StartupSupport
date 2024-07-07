@@ -1,13 +1,14 @@
-// pages/CommunityPage.js
+// src/pages/CommunityPage.js
 import React, { useState } from 'react';
 import './community.css'; // Import the CSS for styling
 
 const Community = () => {
   const [newPostContent, setNewPostContent] = useState('');
   const [posts, setPosts] = useState([
-    { id: 1, user: 'Ararsa', content: 'How can I improve my business plan?', timestamp: new Date() - 7200000 }, // 2 hours ago
-    { id: 2, user: 'melkamu', content: 'What are the best funding options for startups?', timestamp: new Date() - 18000000 }, // 5 hours ago
+    { id: 1, user: 'Ararsa', content: 'How can I improve my business plan?', timestamp: new Date() - 7200000, likes: 3, comments: [] }, // 2 hours ago
+    { id: 2, user: 'melkamu', content: 'What are the best funding options for startups?', timestamp: new Date() - 18000000, likes: 5, comments: [] }, // 5 hours ago
   ]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handlePostChange = (e) => {
     setNewPostContent(e.target.value);
@@ -20,10 +21,23 @@ const Community = () => {
         user: 'You',
         content: newPostContent,
         timestamp: new Date(),
+        likes: 0,
+        comments: [],
       };
       setPosts([newPost, ...posts]);
       setNewPostContent('');
     }
+  };
+
+  const handleLikePost = (postId) => {
+    setPosts(posts.map(post => post.id === postId ? { ...post, likes: post.likes + 1 } : post));
+  };
+
+  const handleCommentChange = (postId, commentContent) => {
+    setPosts(posts.map(post => post.id === postId ? {
+      ...post,
+      comments: [...post.comments, { id: post.comments.length + 1, content: commentContent }]
+    } : post));
   };
 
   const formatTimestamp = (timestamp) => {
@@ -46,6 +60,11 @@ const Community = () => {
     }
   };
 
+  const filteredPosts = posts.filter(post => 
+    post.content.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    post.user.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="community-page">
       <section className="intro">
@@ -64,19 +83,51 @@ const Community = () => {
         <button onClick={handlePostSubmit} className="post-button">Post</button>
       </section>
 
+      <section className="search-posts">
+        <input 
+          type="text" 
+          placeholder="Search posts by content or user..." 
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="search-input-community"
+        />
+      </section>
+
       <section className="posts">
         <h2>Recent Posts</h2>
         <div className="posts-list">
-          {posts.map(post => (
+          {filteredPosts.map(post => (
             <div key={post.id} className="post-card">
               <h3>{post.user}</h3>
               <p>{post.content}</p>
               <span className="timestamp">{formatTimestamp(post.timestamp)}</span>
+              <div className="post-interactions">
+                <button onClick={() => handleLikePost(post.id)} className="like-button">
+                  Like ({post.likes})
+                </button>
+                <div className="comments-section">
+                  <input 
+                    type="text" 
+                    placeholder="Add a comment..." 
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && e.target.value.trim()) {
+                        handleCommentChange(post.id, e.target.value.trim());
+                        e.target.value = '';
+                      }
+                    }}
+                  />
+                  <ul className="comments-list">
+                    {post.comments.map(comment => (
+                      <li key={comment.id}>{comment.content}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </section>
-
+        
       <section className="discussion-topics">
         <h2>Discussion Topics</h2>
         <div className="topics-list">

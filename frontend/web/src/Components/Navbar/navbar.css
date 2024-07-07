@@ -46,6 +46,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-right: 5px;
+    max-width: 100px;
   }
   
   .search-button {
