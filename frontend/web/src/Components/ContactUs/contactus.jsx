@@ -1,4 +1,5 @@
-// ContactUs.jsx
+// src/components/ContactUs.jsx
+
 import React, { useState } from 'react';
 import './contactus.css'; // CSS for Contact Us page styling
 
@@ -8,6 +9,7 @@ const ContactUs = () => {
     email: '',
     message: ''
   });
+  const [status, setStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,54 +21,89 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can implement form submission logic, e.g., send data to backend, display success message, etc.
-    console.log('Form data:', formData);
-    // Clear form after submission
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+
+    // Basic form validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus({ type: 'error', message: 'All fields are required.' });
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      setStatus({ type: 'error', message: 'Please enter a valid email address.' });
+      return;
+    }
+
+    // Mock submission
+    setStatus({ type: 'loading', message: 'Submitting...' });
+
+    setTimeout(() => {
+      console.log('Form data:', formData);
+      setStatus({ type: 'success', message: 'Your message has been sent successfully!' });
+
+      // Clear form after submission
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    }, 2000);
   };
 
   return (
     <div className="contact-us-container">
       <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+      <div className="contact-form" onSubmit={handleSubmit}>
+        <div className="contact-form-group">
+          <label htmlFor="contact-name">Name:</label>
+          <div className="contact-input-wrapper">
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              className="contact-input"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
         </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+        <div className="contact-form-group">
+          <label htmlFor="contact-email">Email:</label>
+          <div className="contact-input-wrapper">
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              className="contact-input"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
         </div>
-        <div className="form-group">
-          <label htmlFor="message">Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
+        <div className="contact-form-group">
+          <label htmlFor="contact-message">Message:</label>
+          <div className="contact-textarea-wrapper">
+            <textarea
+              id="contact-message"
+              name="message"
+              className="contact-textarea"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+          </div>
         </div>
-        <button className='contact-button' type="submit">Submit</button>
-      </form>
+        <div className="contact-button-wrapper">
+          <div className="contact-button" onClick={handleSubmit}>Submit</div>
+        </div>
+      </div>
+
+      {status && (
+        <div className={`contact-status-message ${status.type}`}>
+          {status.message}
+        </div>
+      )}
     </div>
   );
 };

@@ -23,9 +23,19 @@
 }
 
 .footer-logo {
-  width: 150px;
+  width: 200px;
   display: block;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.footer-logo-sectio .footer-logo{
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.footer-logo-section:hover .footer-logo {
+  transform: rotate(360deg) scale(1.1);
 }
 
 .footer-tagline {

@@ -1,8 +1,8 @@
 /* General Navbar Styling */
 .navbar {
-  position: fixed; /* Make the navbar fixed */
-  top: 0; /* Position it at the top */
-  width: 100%; /* Full width */
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
@@ -10,31 +10,37 @@
   background: linear-gradient(135deg, #227395 0%, #457c97 99%, #21485c 100%);
   padding: 10px 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s, box-shadow 0.3s; /* Smooth transitions */
-}
-.navbar-logo {
-  display: inline-block;
-  width: 160px; /* Adjust as per your logo's size */
-  height: 100px; /* Corrected to have a unit */
-  background-image: url('../Assets/milkii6.png'); /* Path to your logo image */
-  background-size: cover; /* Change to cover to fill the div */
-  background-repeat: no-repeat;
-  background-position: center; /* Center the logo inside the div */
-}
-.navbar:hover {
-  background: linear-gradient(135deg, #225a76 0%, #247ba0 99%, #247ba0 100%); /* Change background on hover */
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
-  transition: background 0.3s ease-in-out; /* Smoother hover transition */
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
-/* Logo Styling */
+.menu {
+  width: 40px;
+  height: 20px;
+}
+
+.navbar-logo {
+  display: inline-block;
+  width: 160px;
+  height: 100px;
+  background-image: url('../Assets/milkii8.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navbar:hover {
+  background: linear-gradient(135deg, #225a76 0%, #247ba0 99%, #247ba0 100%);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-in-out;
+}
+
 .navbar-brand .navbar-logo {
   height: 40px;
   transition: transform 0.3s;
 }
 
 .navbar-brand:hover .navbar-logo {
-  transform: rotate(360deg) scale(1.1); /* Spin and scale logo on hover */
+  transform: rotate(360deg) scale(1.1);
 }
 
 /* Links Container */
@@ -49,18 +55,18 @@
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar-item:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  color: #ffd700; /* Change text color on hover */
+  color: #ffd700;
 }
 
 /* Search Bar */
-.navbar-search {
+.navbar-search-content {
   display: flex;
   align-items: center;
 }
@@ -75,7 +81,7 @@
 }
 
 .search-input:focus {
-  border: 2px solid #ffd700; /* Highlight on focus */
+  border: 2px solid #ffd700;
 }
 
 .search-button {
@@ -109,7 +115,7 @@
 }
 
 .navbar-user-avatar:hover {
-  border: 2px solid #ffd700; /* Change border color on hover */
+  border: 2px solid #ffd700;
   transform: scale(1.1);
 }
 
@@ -165,7 +171,11 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  display: none; /* Hide by default */
+  display: none;
+  color: white;
+  padding: 10px;
+  z-index: 1001;
+  margin-right: 0px;
 }
 
 /* Responsive Navbar Menu */
@@ -179,6 +189,8 @@
     top: 60px;
     left: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 999;
   }
 
   .navbar-links.active {
@@ -191,6 +203,27 @@
   }
 
   .navbar-toggle {
-    display: block; /* Show toggle button on smaller screens */
+    display: block;
+  }
+
+  /* Hide search bar and other elements on smaller screens */
+  .navbar-search-content, .navbar-user-menu, .navbar-login, .navbar-signup, .navbar-logout {
+    display: none;
+  }
+
+  .navbar-brand .navbar-logo {
+    height: 40px;
+    transition: transform 0.3s;
+  }
+
+  .navbar-brand:hover .navbar-logo {
+    transform: rotate(360deg) scale(1.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    width: 120px;
+    height: 40px;
   }
 }

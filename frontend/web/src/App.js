@@ -15,6 +15,7 @@ import Login from './Components/Login/login';
 import Signup from './Components/SignUp/signup'; 
 import GetStarted from './Components/GetStarted/getStarted';
 import Profile from './Components/Profile/profile';
+import JoinNow from './Components/JoinNow/joinNow';
 import './index.css'; 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/search" element={<Search />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/getStarted" element={<GetStarted />} />
+          <Route path="/join" element={<JoinNow />} />
           <Route path="/login" element={!isAuthenticated ? <Login onLogin={handleLogin} /> : <Navigate to="/" replace />} />
           <Route path="/signup" element={!isAuthenticated ? <Signup onSignup={handleSignup} /> : <Navigate to="/login" replace />} />
           <Route path="/profile" element={isAuthenticated ? <Profile onLogout={handleLogout} /> : <Navigate to="/login" replace />} />

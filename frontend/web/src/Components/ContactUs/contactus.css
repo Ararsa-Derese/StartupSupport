@@ -1,53 +1,157 @@
-/* contactus.css */
+/* src/components/contactus.css */
 
 .contact-us-container {
-    max-width: 600px;
-    margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgb(4, 29, 68), #41813e);
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.contact-us-container h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.contact-form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.contact-input-wrapper,
+.contact-textarea-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.contact-textarea {
+  resize: none;
+  height: 100px;
+}
+
+.contact-button-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-button {
+  background-color: #ffcc33;
+  color: #000;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: bold;
+  text-align: center;
+  width: 150px;
+}
+
+.contact-button:hover {
+  background-color: #f06;
+  transform: scale(1.1);
+}
+
+.contact-status-message {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.contact-status-message.success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.contact-status-message.error {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.contact-status-message.loading {
+  background-color: #ffc107;
+  color: #000;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .contact-us-container {
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f8f9fa;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  
-  .contact-us-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input,
-  .form-group textarea {
+
+  .contact-form {
     width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
   }
-  
-  .form-group textarea {
-    resize: vertical; /* Allow vertical resizing */
-    min-height: 150px;
+}
+
+@media (max-width: 480px) {
+  .contact-us-container h2 {
+    font-size: 1.8rem;
   }
-  
+
   .contact-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
     padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
+    font-size: 1rem;
   }
-  
- .contact-button:hover {
-    background-color: #0056b3;
-  }
-  
+}
