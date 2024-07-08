@@ -1,0 +1,63 @@
+/* src/components/joinNow.css */
+
+.join-now-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4a616b 0%, #6498b2 99%, #a9cee2 100%);
+    padding: 20px;
+    color: #fff;
+   
+  }
+  
+  .join-now-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  h1, h2 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 30px;
+  }
+  
+  .benefits-list {
+    margin-bottom: 30px;
+  }
+  
+  .benefits-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .benefits-list li {
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .join-now-submit {
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .join-now-submit:hover {
+    background-color: #ff9a9e;
+    transform: scale(1.1);
+  }
+  

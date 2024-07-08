@@ -1,10 +1,10 @@
 // Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './login.css'; 
+import './login.css';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -29,8 +29,10 @@ const Login = () => {
     try {
       const response = await mockLogin(email, password);
       if (response.success) {
-        // Redirect to the home page or dashboard after successful login
-        navigate('/');
+        // Update authentication state (example: call onLogin callback)
+        onLogin(); // This should update the isAuthenticated state in App.js
+        // Redirect to profile page after successful login
+        // navigate('/profile');
       }
     } catch (error) {
       setError(error.message || 'An error occurred');
@@ -63,7 +65,9 @@ const Login = () => {
               required
             />
           </div>
-          <button type="submit" className="login-button">Login</button>
+          <button type="submit" className="login-button">
+            Login
+          </button>
         </form>
         <div className="login-links">
           <Link to="/forgot-password">Forgot Password?</Link>

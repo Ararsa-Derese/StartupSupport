@@ -1,7 +1,8 @@
 // Signup.js
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './signup.css'; // Import the CSS for styling
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -10,13 +11,13 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
     if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      setError('Passwords do not match');
       return;
     }
 
@@ -36,8 +37,8 @@ const Signup = () => {
     try {
       const response = await mockSignup(name, email, password);
       if (response.success) {
-        // Redirect to the home page or dashboard after successful signup
-        navigate('/');
+        // Redirect to profile page after successful signup
+        navigate('/profile');
       }
     } catch (error) {
       setError(error.message || 'An error occurred');
@@ -90,7 +91,9 @@ const Signup = () => {
               required
             />
           </div>
-          <button type="submit" className="signup-button">Sign Up</button>
+          <button type="submit" className="signup-button">
+            Sign Up
+          </button>
         </form>
         <div className="signup-links">
           <Link to="/login">Already have an account? Login</Link>

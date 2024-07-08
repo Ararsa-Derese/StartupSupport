@@ -1,127 +1,229 @@
-/* navbar.css */
-
 /* General Navbar Styling */
 .navbar {
-    position: fixed; /* Make the navbar fixed */
-    top: 0; /* Position it at the top */
-    width: 100%; /* Full width */
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8f9fa;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #227395 0%, #457c97 99%, #21485c 100%);
+  padding: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.menu {
+  width: 40px;
+  height: 20px;
+}
+
+.navbar-logo {
+  display: inline-block;
+  width: 160px;
+  height: 100px;
+  background-image: url('../Assets/milkii8.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navbar:hover {
+  background: linear-gradient(135deg, #225a76 0%, #247ba0 99%, #247ba0 100%);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-in-out;
+}
+
+.navbar-brand .navbar-logo {
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.navbar-brand:hover .navbar-logo {
+  transform: rotate(360deg) scale(1.1);
+}
+
+/* Links Container */
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Individual Links */
+.navbar-item {
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffd700;
+}
+
+/* Search Bar */
+.navbar-search-content {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 5px 10px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  margin-right: 5px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.search-input:focus {
+  border: 2px solid #ffd700;
+}
+
+.search-button {
+  padding: 5px 15px;
+  border: none;
+  background-color: #ffd700;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.search-button:hover {
+  background-color: #ff9a9e;
+  transform: scale(1.1);
+}
+
+/* User Menu */
+.navbar-user-menu {
+  display: flex;
+  align-items: center;
+  padding: 10px 50px;
+}
+
+.navbar-user-avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: border 0.3s, transform 0.3s;
+}
+
+.navbar-user-avatar:hover {
+  border: 2px solid #ffd700;
+  transform: scale(1.1);
+}
+
+/* Login and Sign Up Buttons */
+.navbar-login, .navbar-signup {
+  padding: 5px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.navbar-login {
+  background-color: #28a745;
+  color: white;
+}
+
+.navbar-login:hover {
+  background-color: #218838;
+  transform: scale(1.1);
+}
+
+.navbar-signup {
+  background-color: #ffc107;
+  color: black;
+}
+
+.navbar-signup:hover {
+  background-color: #e0a800;
+  transform: scale(1.1);
+}
+
+/* Logout Button */
+.navbar-logout {
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.navbar-logout:hover {
+  background-color: #c82333;
+  transform: scale(1.1);
+}
+
+/* Toggle Button for Mobile View */
+.navbar-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  color: white;
+  padding: 10px;
+  z-index: 1001;
+  margin-right: 0px;
+}
+
+/* Responsive Navbar Menu */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 999;
   }
-  
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-item {
+    margin: 10px 0;
+    color: #fff;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  /* Hide search bar and other elements on smaller screens */
+  .navbar-search-content, .navbar-user-menu, .navbar-login, .navbar-signup, .navbar-logout {
+    display: none;
+  }
+
   .navbar-brand .navbar-logo {
     height: 40px;
+    transition: transform 0.3s;
   }
-  
-  .navbar-links {
-    display: flex;
-    align-items: center;
+
+  .navbar-brand:hover .navbar-logo {
+    transform: rotate(360deg) scale(1.1);
   }
-  
-  .navbar-item {
-    margin: 0 15px;
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    width: 120px;
+    height: 40px;
   }
-  
-  .navbar-item:hover {
-    color: #007bff;
-  }
-  
-  .navbar-search {
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-input {
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 5px;
-  }
-  
-  .search-button {
-    padding: 5px 10px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .search-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .navbar-user-menu {
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Specific Styling for Login and Sign Up Buttons */
-  .navbar-login {
-    background-color: #28a745;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-right: 10px;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .navbar-login:hover {
-    background-color: #218838;
-    transform: scale(1.05);
-  }
-  
-  .navbar-signup {
-    background-color: #ffc107;
-    color: black;
-    padding: 5px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .navbar-signup:hover {
-    background-color: #e0a800;
-    transform: scale(1.05);
-  }
-  
-  .navbar-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  /* Responsive Navbar Menu */
-  @media (max-width: 768px) {
-    .navbar-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: #f8f9fa;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-  
-    .navbar-links.active {
-      display: flex;
-    }
-  
-    .navbar-item {
-      margin: 10px 0;
-    }
-  }
-  
+}

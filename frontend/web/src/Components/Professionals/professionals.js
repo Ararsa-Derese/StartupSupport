@@ -23,13 +23,19 @@ const Professionals = () => {
 
   return (
     <div className="professionals-page">
+      <header className="page-header">
+        <div className='page-header-text'>
+        <h1>Find Professionals</h1>
+        <p>Connect with professionals in various fields</p>
+        </div>
+      </header>
       <section className="search-filter">
         <input
           type="text"
           placeholder="Search professionals..."
           value={searchTerm}
           onChange={handleSearchChange}
-          className="search-input"
+          className="search-input-professionals"
         />
         <select value={filterCategory} onChange={handleFilterChange} className="filter-select">
           <option value="All">All Categories</option>
@@ -45,7 +51,7 @@ const Professionals = () => {
         {filteredProfessionals.map(professional => (
           <div key={professional.id} className="professional-card">
             <img src={professional.image} alt={professional.name} className="professional-photo" />
-            <h3>{professional.name}</h3>
+            <h3 className='professional-name'>{professional.name}</h3>
             <p>{professional.category}</p>
             <p>{professional.description}</p>
             <button className="connect-button">Connect</button>

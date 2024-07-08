@@ -1,136 +1,226 @@
-/* AboutUsPage.css */
 
-/* General Styling */
 .about-us-page {
-    font-family: 'Arial, sans-serif';
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
+  font-family: 'Roboto', sans-serif; /* More modern font */
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  background: #f0f4f8; /* Light background for overall page */
+  max-width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Company Overview Section */
+.company-overview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #d9e2ec, #f0f4f8); /* Subtle gradient background */
+  border-radius: 10px;
+}
+
+.overview-content {
+  flex: 1;
+  max-width: 600px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.overview-content h1 {
+  font-size: 3em; /* Larger heading */
+  margin-bottom: 20px;
+  color: #007bff; /* Highlight color */
+  text-transform: uppercase; /* Uppercase for a bold look */
+}
+
+.overview-content p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.overview-image {
+  flex: 1;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.overview-image:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Mission Section */
+.mission {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff; /* White background for contrast */
+  border-radius: 10px;
+  margin: 40px 0; /* Spacing between sections */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mission h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.mission p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Team Section */
+.team {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #f9f9f9, #f0f4f8); /* Light gradient */
+  border-radius: 10px;
+}
+
+.team h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #007bff;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.team-member {
+  width: 250px;
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.team-photo {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.team-photo:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.team-member h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.team-member p {
+  color: #777;
+  font-size: 1em;
+}
+
+/* Call-to-Action Section */
+.cta-about {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #27ae60;
+  color: #fff;
+  border-radius: 10px;
+  margin-top: 40px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cta-about h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.cta-about p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.cta-button-about {
+  background-color: #fff;
+  color: #27ae60;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none; /* Ensures no underline */
+}
+
+.cta-button-about:hover {
+  background-color: #218c4f;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .company-overview,
+  .mission,
+  .team,
+  .cta-about {
+    padding: 40px 20px;
   }
-  
-  /* Company Overview Section */
-  .company-overview {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+
+  .team-grid {
+    flex-direction: column;
     gap: 20px;
-    padding: 60px 0;
-    background-color: #f9f9f9;
-  }
-  
-  .overview-content {
-    flex: 1;
-    max-width: 600px;
   }
   
   .overview-content h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
-  
-  .overview-content p {
-    font-size: 1.2em;
-  }
-  
-  .overview-image {
-    flex: 1;
-    max-width: 600px;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Mission Section */
-  .mission {
-    text-align: center;
-    padding: 60px 20px;
-  }
-  
-  .mission h2 {
     font-size: 2em;
-    margin-bottom: 20px;
   }
   
-  .mission p {
-    font-size: 1.2em;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  /* Team Section */
-  .team {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-  }
-  
-  .team h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
-  }
-  
-  .team-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  
-  .team-member {
-    width: 250px;
-    text-align: center;
-  }
-  
-  .team-photo {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .team-member h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .team-member p {
-    color: #777;
-    font-size: 1em;
-  }
-  
-  /* Call-to-Action Section */
-  .cta-about {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #27ae60;
-    color: #fff;
-  }
-  
+  .mission h2,
+  .team h2,
   .cta-about h2 {
     font-size: 2em;
-    margin-bottom: 20px;
   }
-  
-  .cta-about p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  .cta-button-about {
-    background-color: #fff;
-    color: #007bff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .cta-button-about:hover {
-    background-color: #0056b3;
-    color: #fff;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
