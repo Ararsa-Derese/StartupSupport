@@ -1,6 +1,7 @@
 // App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Routes, RouterProvider } from 'react-router-dom';
 import Navbar from './Components/Navbar/navbar';
 import Footer from './Components/Footer/footer'; 
 import Home from './Components/Home/home';
@@ -12,9 +13,11 @@ import Pricing from './Components/Pricing/pricing';
 import Search from './Components/Search/search'; 
 import Login from './Components/Login/login'; 
 import Signup from './Components/SignUp/signup'; 
+import {store} from './strore';
 
 const App = () => {
   return (
+    <Provider store={store}>
     <Router>
       <Navbar />
       <div className="content"> {/* Add a wrapper div with the content class */}
@@ -32,6 +35,7 @@ const App = () => {
       </div>
       <Footer />
     </Router>
+    </Provider>
   );
 };
 
