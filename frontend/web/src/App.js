@@ -1,6 +1,7 @@
 // App.js
 import React, { useState } from 'react';
-import { Provider } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from './Components/Navbar/navbar';
 import Footer from './Components/Footer/footer'; 
@@ -14,14 +15,18 @@ import ContactUs from './Components/ContactUs/contactus';
 import Search from './Components/Search/search'; 
 import Login from './Components/Login/login'; 
 import Signup from './Components/SignUp/signup'; 
-
-import {store} from './strore';
+import { checkAuth } from './features/user';
 
 import GetStarted from './Components/GetStarted/getStarted';
 import Profile from './Components/Profile/profile';
 import JoinNow from './Components/JoinNow/joinNow';
 import './index.css'; 
 const App = () => {
+  const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(checkAuth());
+	}, []);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = () => {
@@ -37,7 +42,7 @@ const App = () => {
   };
 
   return (
-    <Provider store={store}>
+    
     <Router>
       <Navbar isAuthenticated={isAuthenticated} onLogout={handleLogout} /> {/* Pass onLogout to Navbar */}
       <div className="content">
@@ -52,14 +57,14 @@ const App = () => {
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/getStarted" element={<GetStarted />} />
           <Route path="/join" element={<JoinNow />} />
-          <Route path="/login" element={!isAuthenticated ? <Login onLogin={handleLogin} /> : <Navigate to="/" replace />} />
-          <Route path="/signup" element={!isAuthenticated ? <Signup onSignup={handleSignup} /> : <Navigate to="/login" replace />} />
-          <Route path="/profile" element={isAuthenticated ? <Profile onLogout={handleLogout} /> : <Navigate to="/login" replace />} />
+          <Route path="/login" element={ <Login />} />
+          <Route path="/signup" element={<Signup  />} />
+          <Route path="/profile" element={<Profile  />} />
         </Routes>
       </div>
       <Footer />
     </Router>
-    </Provider>
+    
   );
 };
 

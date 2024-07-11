@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js --ignore client"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/Ararsa-Derese/StartupSupport#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "node-fetch": "^3.3.2",
     "nodemon": "^3.1.4",
     "path": "^0.12.7"
   }

@@ -1,15 +1,19 @@
 
 import React from 'react';
 import './home.css'; 
-import hero from '../Assets/hero-bg.jpg'; 
 import expertise from '../Assets/expertise.jpg'; 
 import resources from '../Assets/resources.jpg'; 
 import community from '../Assets/community.jpg'; 
-
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
 const Home = () => {
+  const { isAuthenticated, user, loading } = useSelector(state => state.user);
+
+	if (!isAuthenticated && !loading && user === null)
+		return <Navigate to='/signup' />;
   return (
     <div className="homepage">
       {/* Hero Section */}

@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import './navbar.css';
 import logo from '../Assets/milkii8.png';
 import menu from '../Assets/menu.png';
+import { logout } from '../../features/user';
 
-const Navbar = ({ isAuthenticated, onLogout, user }) => {
+const Navbar = ({ onLogout }) => {
+  const dispatch = useDispatch();
+  const { isAuthenticated, user, loading } = useSelector(state => state.user);
   const [searchQuery, setSearchQuery] = useState('');
   const [menuOpen, setMenuOpen] = useState(false); // State for mobile menu
   const navigate = useNavigate();
@@ -66,7 +71,7 @@ const Navbar = ({ isAuthenticated, onLogout, user }) => {
       </div>
       
       <div className="navbar-user-menu">
-        {!isAuthenticated ? (
+        {!isAuthenticated && !loading && user === null? (
           <>
             <Link to="/login" className="navbar-item navbar-login" onClick={closeMenu}>Login</Link>
             <Link to="/signup" className="navbar-item navbar-signup" onClick={closeMenu}>Sign Up</Link>
@@ -80,7 +85,7 @@ const Navbar = ({ isAuthenticated, onLogout, user }) => {
                 'Profile'
               )}
             </Link>
-            <button onClick={handleLogout} className="navbar-item navbar-logout">Logout</button>
+            <button onClick={() => dispatch(logout())} className="navbar-item navbar-logout">Logout</button>
           </>
         )}
       </div>

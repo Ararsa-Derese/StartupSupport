@@ -3,98 +3,102 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './signup.css'; // Import the CSS for styling
 import { Link } from 'react-router-dom';
+import {userSelector, useDispatch, useSelector} from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { register } from '../../features/user.js';
+const RegisterPage = () => {
+	const dispatch = useDispatch();
+	const { registered, loading } = useSelector(state => state.user);
 
-const Signup = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
-  
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
+	const [formData, setFormData] = useState({
+		first_name: '',
+		last_name: '',
+		email: '',
+		password: '',
+	});
 
-    if (password !== confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
+	const { first_name, last_name, email, password } = formData;
 
-    // Mock signup function (replace with actual signup logic)
-    const mockSignup = (name, email, password) => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          if (email === 'user@example.com') {
-            reject({ success: false, message: 'Email already exists' });
-          } else {
-            resolve({ success: true });
-          }
-        }, 1000);
-      });
-    };
+	const onChange = e => {
+		setFormData({ ...formData, [e.target.name]: e.target.value });
+	};
 
-    try {
-      const response = await mockSignup(name, email, password);
-      if (response.success) {
-        // Redirect to profile page after successful signup
-        navigate('/profile');
-      }
-    } catch (error) {
-      setError(error.message || 'An error occurred');
-    }
-  };
+	const onSubmit = e => {
+		e.preventDefault();
+
+		dispatch(register({ first_name, last_name, email, password }));
+	};
+
+	if (registered) return <Navigate to='/login' />;
+
 
   return (
     <div className="signup-container">
       <div className="signup-form">
         <h2>Sign Up</h2>
-        {error && <p className="error-message">{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit" className="signup-button">
-            Sign Up
-          </button>
-        </form>
+        <form className='mt-5' onSubmit={onSubmit}>
+				<div className='form-group'>
+					<label className='form-label' htmlFor='first_name'>
+						First Name
+					</label>
+					<input
+						className='form-control'
+						type='text'
+						name='first_name'
+						onChange={onChange}
+						value={first_name}
+						required
+					/>
+				</div>
+				<div className='form-group mt-3'>
+					<label className='form-label' htmlFor='last_name'>
+						Last Name
+					</label>
+					<input
+						className='form-control'
+						type='text'
+						name='last_name'
+						onChange={onChange}
+						value={last_name}
+						required
+					/>
+				</div>
+				<div className='form-group mt-3'>
+					<label className='form-label' htmlFor='email'>
+						Email
+					</label>
+					<input
+						className='form-control'
+						type='email'
+						name='email'
+						onChange={onChange}
+						value={email}
+						required
+					/>
+				</div>
+				<div className='form-group mt-3'>
+					<label className='form-label' htmlFor='password'>
+						Password
+					</label>
+					<input
+						className='form-control'
+						type='password'
+						name='password'
+						onChange={onChange}
+						value={password}
+						required
+					/>
+				</div>
+				{loading ? (
+					<div className='spinner-border text-primary' role='status'>
+						<span className='visually-hidden'>Loading...</span>
+					</div>
+				) : (
+					<button type="submit" className="signup-button">
+					Sign Up
+				  </button>
+				)}
+			</form>
         <div className="signup-links">
           <Link to="/login">Already have an account? Login</Link>
         </div>
@@ -103,4 +107,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default RegisterPage;
