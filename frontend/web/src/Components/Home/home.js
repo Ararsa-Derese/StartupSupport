@@ -10,10 +10,8 @@ import { Link } from 'react-router-dom';
 
 
 const Home = () => {
-  const { isAuthenticated, user, loading } = useSelector(state => state.user);
 
-	if (!isAuthenticated && !loading && user === null)
-		return <Navigate to='/signup' />;
+
   return (
     <div className="homepage">
       {/* Hero Section */}
