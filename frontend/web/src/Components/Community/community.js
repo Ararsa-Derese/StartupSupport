@@ -75,6 +75,7 @@ const Community = () => {
 
       <section className="create-post">
         <h2>Create a Post</h2>
+        <div className='post'>
         <textarea
           value={newPostContent}
           onChange={handlePostChange}
@@ -82,6 +83,7 @@ const Community = () => {
           className="post-input"
         ></textarea>
         <button onClick={handlePostSubmit} className="post-button">Post</button>
+        </div>
       </section>
 
       <section className="search-posts">

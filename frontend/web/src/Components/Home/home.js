@@ -4,14 +4,11 @@ import './home.css';
 import expertise from '../Assets/expertise.jpg'; 
 import resources from '../Assets/resources.jpg'; 
 import community from '../Assets/community.jpg'; 
-import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+
 import { Link } from 'react-router-dom';
 
 
 const Home = () => {
-
-
   return (
     <div className="homepage">
       {/* Hero Section */}
@@ -28,24 +25,24 @@ const Home = () => {
       <section className="features">
         <h2>Our Features</h2>
         <div className="features-grid">
-        <a href="/professionals" className="feature-card">
+        <Link to="/professionals" className="feature-card">
           <img src={expertise} alt="Expertise" />
           <h3>Expertise on Demand</h3>
           <p>Access top professionals across various fields.</p>
-        </a>
+        </Link>
 
-        <a href='/resources' className="feature-card">
+        <Link to='/resources' className="feature-card">
           <img src={resources} alt="Resources" />
           <h3>Vast Resources</h3>
           <p>Leverage articles, webinars, and tools to accelerate your growth.</p>
-        </a>
+        </Link>
 
       
-        <a href="/community"  className="feature-card"> 
+        <Link to="/community"  className="feature-card"> 
           <img src={community} alt="Community" />
           <h3>Thriving Community</h3>
           <p>Engage with fellow entrepreneurs and experts in our forums.</p>
-        </a>
+        </Link>
         
 
         </div>
@@ -69,7 +66,7 @@ const Home = () => {
       {/* Call-to-Action Section */}
       <section className="cta">
         <h2>Ready to Take Your Business to the Next Level?</h2>
-        <a href="/join" className="cta-button">Join Now</a>
+        <Link to="/join" className="cta-button">Join Now</Link>
       </section>
     </div>
   );

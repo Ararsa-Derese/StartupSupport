@@ -126,7 +126,7 @@
 
 .resource-link {
   display: inline-block;
-  background-color: #007bff;
+  background-color: #21c008;
   color: #fff;
   text-decoration: none;
   font-size: 1em;
@@ -137,11 +137,19 @@
 }
 
 .resource-link:hover {
-  background-color: #0056b3;
+  background-color: #1c9604;
   color: #fff;
+  animation: vibrateX 0.2s linear infinite;
 }
 
 /* Keyframe animations */
+@keyframes vibrateX {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(2px); }
+  50% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
 @keyframes fadeInUp {
   from {
     opacity: 0;

@@ -67,11 +67,13 @@
   font-size: 1.2em;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
+  
 }
 
 .cta-button:hover {
-  background-color: #feb47b;
-  transform: scale(1.05);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+  background-color:#feb47b;
 }
 
 /* Features Section */
@@ -111,10 +113,11 @@
 .feature-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+  color: white !important; /* Forces text color to white for all child elements */
 }
 
 .feature-card img {
-  height: 120px;
+  height: 180px;
   margin-bottom: 20px;
   border-radius: 10px;
 }
@@ -124,6 +127,7 @@
   margin-bottom: 15px;
   color: #007bff;
 }
+
 
 .feature-card p {
   font-size: 1.2em;
@@ -169,7 +173,9 @@
   font-size: 1.2em;
   color: #333;
 }
-
+.testimonial-card:hover{
+  background-color: #08d8a7;
+}
 /* Call-to-Action Section */
 .cta {
   padding: 80px 20px;

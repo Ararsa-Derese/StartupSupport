@@ -1,184 +1,321 @@
-/* PricingPage.css */
+/* pricing.css */
 
 /* General Styling */
 .pricing-page {
-    font-family: 'Arial, sans-serif';
-    color: #333;
-    padding: 20px;
-  }
+  color: #333;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif; /* More modern font */
+  line-height: 1.6;
+  background: #f0f4f8; /* Light background for overall page */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Intro Section */
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.intro h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease-out; /* Fade in from top */
+}
+
+.intro p {
+  font-size: 1.2em;
+  animation: fadeInUp 1s ease-out; /* Fade in from bottom */
+}
+
+/* Pricing Table */
+.pricing-tiers {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.tier, .pricing-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.tier:hover, .pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+.tier h2, .pricing-title {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.pricing-title::after, .tier h2::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background-color: #007bff;
+  bottom: -5px;
+  left: 25%;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.pricing-card:hover .pricing-title::after, .tier:hover h2::after {
+  transform: scaleX(1);
+}
+
+.tier .price, .pricing-price {
+  font-size: 2.5em;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.price, .tier .price {
+  margin-right: 5px;
+}
+
+.frequency {
+  font-size: 0.5em;
+}
+
+.tier ul, .pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: left;
+  animation: fadeInUp 1s ease-out;
+}
+
+.tier ul li, .pricing-features li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.tier ul li::before, .pricing-features li::before {
+  content: '✔';
+  color: #0bd60b;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.tier button, .pricing-button {
+  display: inline-block;
+  background-color: #038905;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  animation: bounceIn 1s ease-out;
+  border: none;
+}
+
+.tier button:hover, .pricing-button:hover {
+  background-color: #046335;
+  color: #fff;
+}
+
+/* Features Comparison Table */
+.features-comparison {
+  margin-bottom: 40px;
+}
+
+.features-comparison table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.features-comparison th, .features-comparison td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.features-comparison th {
+  background-color: #f4f6f8;
+}
+
+
+
+/* Testimonials Section */
+.testimonials {
+  padding: 80px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+.testimonials-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.testimonial {
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  padding: 30px;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  color: #666;
+}
+
+.testimonial h4 {
+  font-size: 1.2em;
+  color: #333;
+}
+.testimonial:hover{
+  background-color: #08d8a7;
+}
+/* FAQs Section */
+/* Base styling for the FAQ section */
+.faqs {
+  font-family: Arial, sans-serif;
   
-  /* Intro Section */
-  .intro {
-    text-align: center;
-    margin-bottom: 40px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.faqs h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styling for the FAQ grid container */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Individual FAQ item styling */
+.faq {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.faq h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.faq p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Contact Information Section */
+.contact-info {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  .intro h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    animation: fadeInDown 1s ease-out; /* Fade in from top */
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .intro p {
-    font-size: 1.2em;
-    animation: fadeInUp 1s ease-out; /* Fade in from bottom */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  /* Pricing Table */
-  .pricing-table {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .pricing-cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .pricing-card {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
+  to {
+    opacity: 1;
   }
-  
-  .pricing-card:hover {
+}
+
+@keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    transform: translateY(0);
+  }
+  50% {
     transform: translateY(-10px);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
   }
-  
-  .pricing-title {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pricing-tiers {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .pricing-title::after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 3px;
-    background-color: #007bff;
-    bottom: -5px;
-    left: 25%;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .pricing-card:hover .pricing-title::after {
-    transform: scaleX(1);
-  }
-  
-  .pricing-price {
-    font-size: 2.5em;
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-  }
-  
-  .price {
-    margin-right: 5px;
-  }
-  
-  .frequency {
-    font-size: 0.5em;
-  }
-  
-  .pricing-description {
-    font-size: 1em;
+
+  .tier {
+    max-width: 100%;
     margin-bottom: 20px;
-    animation: fadeIn 1s ease-out;
   }
-  
-  .pricing-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 20px;
-    text-align: left;
-    animation: fadeInUp 1s ease-out;
-  }
-  
-  .pricing-features li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-  }
-  
-  .pricing-features li::before {
-    content: '✔';
-    color: #007bff;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  
-  .pricing-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1em;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-    animation: bounceIn 1s ease-out;
-  }
-  
-  .pricing-button:hover {
-    background-color: #0056b3;
-    color: #fff;
-  }
-  
-  /* Keyframe animations */
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes bounceIn {
-    0%, 20%, 40%, 60%, 80%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
+}
