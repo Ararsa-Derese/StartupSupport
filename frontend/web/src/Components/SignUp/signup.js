@@ -16,13 +16,13 @@ const RegisterPage = () => {
 		email: '',
 		password: '',
 	});
-
+     
 	const { first_name, last_name, email, password } = formData;
 
 	const onChange = e => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
-
+     
 	const onSubmit = e => {
 		e.preventDefault();
 
