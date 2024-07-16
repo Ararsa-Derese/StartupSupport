@@ -13,7 +13,7 @@ const LandingPage = () => {
         <div className="landing-page-header-text">
             <h1>Welcome to Milka Startup Support</h1>
             <p>Your journey to success begins here.</p>
-            <Link to="/get-started" className="landing-getting-started-btn">Get Started</Link>
+            <Link to="/signup" className="landing-getting-started-btn">Get Started</Link>
         </div>
       </header>
 
@@ -75,7 +75,7 @@ const LandingPage = () => {
       {/* Call to Action Section */}
       <section className="call-to-action">
         <h2>Ready to Take Your Startup to the Next Level?</h2>
-        <Link to="/contact" className="btn btn-primary">Contact Us</Link>
+        <Link to="/contactus" className="btn btn-primary">Contact Us</Link>
       </section>
     </div>
   );

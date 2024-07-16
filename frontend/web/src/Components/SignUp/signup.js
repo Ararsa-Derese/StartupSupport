@@ -131,7 +131,22 @@ const Signup = ({ onSignup }) => {
               </button>
             </div>
 
+           
 
+            {userType === 'expert' && (
+            <div className="signup-form-group">
+              <label htmlFor="expertise"></label>
+              <input
+                type="text"
+                name="expertise"
+                value={expertise}
+                onChange={onChange}
+                required
+                className="form-control"
+                placeholder='Area of Expertise'
+              />
+            </div>
+          )}
 
           <div className="signup-form-group">
             <label htmlFor="password"></label>
@@ -158,34 +173,8 @@ const Signup = ({ onSignup }) => {
               
             />
           </div>
-          {/* {userType === 'entrepreneur' && (
-            <div className="signup-form-group">
-              <label htmlFor="companyName"></label>
-              <input
-                type="text"
-                name="companyName"
-                value={companyName}
-                onChange={onChange}
-                required
-                className="form-control"
-                placeholder='Company Name'
-              />
-            </div>
-          )}
-          {userType === 'expert' && (
-            <div className="signup-form-group">
-              <label htmlFor="expertise"></label>
-              <input
-                type="text"
-                name="expertise"
-                value={expertise}
-                onChange={onChange}
-                required
-                className="form-control"
-                placeholder='Area of Expertise'
-              />
-            </div>
-          )} */}
+          
+          
           
           {error && <div className="alert alert-danger">{error}</div>}
           <button type="submit" className="signup-btn" disabled={loading}>
