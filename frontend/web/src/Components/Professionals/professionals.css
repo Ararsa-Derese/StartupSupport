@@ -35,21 +35,23 @@
   font-size: 2rem; /* Larger text size */
   position: relative; /* Ensure relative positioning for overlay */
   animation: fadeInUp 1.5s ease-out;
+  box-shadow: #333;
 }
 
 /* Search and Filter Section */
 .search-filter {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 30px;
   margin-bottom: 40px;
   animation: fadeInUp 0.5s ease-out;
+  
 }
 
 .search-input-professionals {
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
   width: 300px;
   background-color: azure;
   transition: all 0.3s ease;
@@ -58,14 +60,14 @@
 
 .search-input-professionals:focus {
   background-color: #fff;
-  border-color: #007bff;
+  border-color: #9e1aa8;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .filter-select {
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
   width: 200px;
   background-color: #ccc;
   transition: all 0.3s ease;
@@ -95,6 +97,15 @@
   position: relative; /* Ensure relative positioning for overlay */
   animation: fadeIn 0.5s ease forwards;
 }
+.professional-card {
+  width: 250px;
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 .professional-card:hover {
   transform: translateY(-10px);
@@ -120,17 +131,17 @@
 }
 
 .connect-button {
-  background-color: #007bff;
+  background-color: rgb(124, 37, 205);
   color: #fff;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .connect-button:hover {
-  background-color: #0056b3;
+  background-color: rgb(113, 28, 193);
 }
 
 /* Animations */

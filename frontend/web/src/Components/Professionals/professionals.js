@@ -4,6 +4,8 @@ import './professionals.css'; // Import the CSS for styling
 import professionalsData from './data'; // Mock data for professionals
 
 const Professionals = () => {
+   
+
   const [searchTerm, setSearchTerm] = useState('');
   const [filterCategory, setFilterCategory] = useState('All');
 

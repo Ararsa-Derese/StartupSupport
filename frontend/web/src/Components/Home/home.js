@@ -8,7 +8,7 @@ import community from '../Assets/community.jpg';
 import { Link } from 'react-router-dom';
 
 
-const Home = () => {
+const EntrepreneurHomePage = () => {
   return (
     <div className="homepage">
       {/* Hero Section */}
@@ -72,4 +72,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default EntrepreneurHomePage;

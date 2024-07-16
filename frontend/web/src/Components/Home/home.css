@@ -173,9 +173,7 @@
   font-size: 1.2em;
   color: #333;
 }
-.testimonial-card:hover{
-  background-color: #08d8a7;
-}
+
 /* Call-to-Action Section */
 .cta {
   padding: 80px 20px;

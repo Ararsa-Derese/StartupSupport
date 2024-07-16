@@ -1,76 +1,207 @@
-/* signup.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* General Styles */
+body, html {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+/* Container Styles */
 .signup-container {
-    z-index: 1000;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: flex-start; 
+ 
+  padding: 40px;
+  border-radius: 12px;
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+  width: 100%;
+  max-width: 450px;
+  margin: 20px auto;
+}
+
+.signup-form {
+  width: 100%;
+  
+}
+
+.signup-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Form Group Styles */
+.signup-form-group{
+  margin-bottom: 20px;
+  position: relative;
+  
+}
+
+
+.signup-form-group input {
+  background-color: #fff;
+  border-radius: 50px;
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  
+  font-size: 16px;
+  transition: all 0.3s ease;
+
+}
+.google-signup, .github-signup{
+  background-color: #fff;
+  border-radius: 50px;
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  
+  font-size: 16px;
+  transition: all 0.3s ease;
+  
+}
+
+.hr-with-text {
+  position: relative;
+  text-align: center;
+  margin: 20px 0; /* Adjust the margin as needed */
+}
+
+.hr-with-text hr {
+  border: none;
+  border-top: 3px solid #4a4949; /* Increased thickness */
+  margin: 0;
+}
+
+.hr-with-text span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 0 10px; /* Adjust padding to your needs */
+  font-size: 19px; /* Adjust font size as needed */
+  color: #131212; /* Adjust text color as needed */
+}
+
+.google-signup, .github-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    gap: 10px; /* Adjust gap as needed */
+    background-color: #fff;
+    border-radius: 50px;
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    transition: all 0.3s ease;
+    position: relative; /* Needed for absolute positioning of the image */
+  }
+
+.google-signup img, .github-signup img {
+  position: absolute;
+  left: 20px; /* Adjust as needed */
+  width: 24px;
+  height: 24px;
+}
+
+.google-signup p, .github-signup p {
+  margin: 0; /* Remove margin from <p> to fix alignment */
+  flex-grow: 1; /* Make <p> take up the available space, centering the text */
+  text-align: center; /* Center the text */
+}
+
+
+  .signup-form-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+  }
+
+  /* User Type Selection Styles */
+  .user-type-selection {
+    
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f6f8;
-    padding: 0 20px;
+    gap: 10px;
+    margin-bottom: 20px; /* Space below the button group */
   }
-  
-  .signup-form {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+
+  .userType-btn {
+    font-size: medium;
+    border-radius: 20px;
     width: 100%;
-    text-align: center;
-  }
-  
-  .signup-form h2 {
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .signup-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    padding: 10px 20px; /* Adjust padding to your liking */
+    border: 1px solid #ccc; /* Border color */
+    background-color: #f5f5f5; /* Default background */
+    color: #333; /* Text color */
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover and active states */
   }
-  
-  .signup-button:hover {
-    background-color: #218838;
+
+  .userType-btn:hover {
+    background-color: #e0e0e0; /* Lighter shade for hover state */
   }
-  
-  .error-message {
-    color: red;
-    margin-bottom: 15px;
-  }
-  
-  .signup-links {
-    margin-top: 20px;
-  }
-  
-  .signup-links a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .signup-links a:hover {
-    text-decoration: underline;
-  }
-  
+
+  .userType-btn.active {
+    background: rgba(0, 0, 0, 0.2);
+    
+    color: black; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Increased shadow for more visibility */
+}
+
+.signup-btn {
+  display: block; /* Make the button a block element */
+  margin: 0 auto; /* Auto margin on both sides to center it */
+  background-color: blueviolet;
+  cursor: pointer;
+  border-radius: 20px;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  width: 40%; /* Adjust width as needed */
+  height: 40px;
+}
+
+
+
+.signup-btn:hover {
+  background-color: rgb(130, 40, 214);
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Alert Styles */
+.alert {
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.change-form-to-login {
+  text-align: center;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.change-form-to-login a {
+  color: #403049; /* Bootstrap default link color, adjust as needed */
+  text-decoration: none; /* Optional: removes underline from links */
+}
+
+.change-form-to-login a:hover {
+  text-decoration: underline; /* Optional: adds underline on hover */
+  color: #4b334b; /* Darker shade for hover effect, adjust as needed */
+}

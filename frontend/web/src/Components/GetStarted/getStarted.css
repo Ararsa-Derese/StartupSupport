@@ -37,7 +37,7 @@
   }
   
   .new-cta-button {
-    background-color: #007bff;
+    background-color: blueviolet;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -46,7 +46,7 @@
   }
   
   .new-cta-button:hover {
-    background-color: #0056b3;
+    background-color: rgb(128, 38, 211);
   }
   
   /* Features Section */

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import './footer.css'; 
-import logo from '../Assets/milkii6.png';
+import logo from '../Assets/logo.png';
 import facebookIcon from '../Assets/facebook.png';
 import twitterIcon from '../Assets/twitter.png';
 import instagramIcon from '../Assets/instagram.png';

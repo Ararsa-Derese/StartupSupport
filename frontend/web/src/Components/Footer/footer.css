@@ -1,11 +1,11 @@
-/* src/Components/Footer/footer.css */
-
 .footer {
-  background-color: #2c3e50;
-  color: #ecf0f1;
+  background: linear-gradient(135deg, #fff, #f5f0eb, #e4cab7);
+  color: black; /* Text color changed to black */
   padding: 50px 20px;
   text-align: center;
   position: relative;
+  font-size: large;
+  font-weight: 500;
 }
 
 .footer-container {
@@ -23,26 +23,25 @@
 }
 
 .footer-logo {
-  width: 200px;
+  width: 200px; /* Adjusted size for better visibility */
   display: block;
   margin-bottom: 10px;
   cursor: pointer;
+  opacity: 1; /* Ensure full opacity */
+  
 }
 
-.footer-logo-sectio .footer-logo{
-  height: 40px;
+.footer-logo-section .footer-logo {
+  height: 100px;
   transition: transform 0.3s;
 }
 
-.footer-logo-section:hover .footer-logo {
-  transform: rotate(360deg) scale(1.1);
-}
 
 .footer-tagline {
   margin-top: 10px;
   font-size: 16px;
   font-style: italic;
-  color: #bdc3c7;
+  color: black; /* Text color changed to black */
 }
 
 .footer-links,
@@ -58,7 +57,7 @@
   font-size: 18px;
   margin-bottom: 20px;
   text-transform: uppercase;
-  color: #ecf0f1;
+  color: black; /* Text color changed to black */
 }
 
 .footer-links ul {
@@ -71,7 +70,7 @@
 }
 
 .footer-links a {
-  color: #ecf0f1;
+  color: black; /* Text color changed to black */
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -83,7 +82,7 @@
 .footer-newsletter p {
   font-size: 14px;
   margin-bottom: 20px;
-  color: #bdc3c7;
+  color: black; /* Text color changed to black */
 }
 
 .footer-newsletter-form {
@@ -95,7 +94,7 @@
 .footer-newsletter-form input[type="email"] {
   padding: 10px;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   margin-bottom: 10px;
   width: 100%;
   max-width: 250px;
@@ -104,15 +103,15 @@
 .footer-newsletter-form button {
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
-  background-color: #3498db;
+  border-radius: 20px;
+  background-color: rgb(128, 38, 212);
   color: #ecf0f1;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .footer-newsletter-form button:hover {
-  background-color: #2980b9;
+  background-color: rgb(108, 29, 181);
 }
 
 .footer-social .social-icons {
@@ -142,10 +141,9 @@
 
 .footer-bottom p {
   font-size: 14px;
-  color: #bdc3c7;
+  color: black; /* Text color changed to black */
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;

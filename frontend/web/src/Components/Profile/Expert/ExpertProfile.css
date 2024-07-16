@@ -1,0 +1,101 @@
+.expert-profile-container {
+    display: flex;
+    
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .expert-profile-container {
+    display: flex;
+    padding-top: 70px;
+    min-height: 100vh;
+    
+  }
+  
+  
+  .sidebar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #34495e;
+    color: #ecf0f1;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar button:hover {
+    background-color: #2980b9;
+  }
+  .profile-section{
+    padding-left: 20px;
+  }
+ 
+  .sidebar {
+    flex: 0 0 200px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+  }
+  
+  .sidebar button {
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar button:hover {
+    background-color: #2980b9;
+  }
+  
+  .profile-content {
+  background-color: #bdc3c7;
+    flex: 3;
+    padding: 20px;
+  }
+  
+  
+ 
+  .edit-name, .edit-email{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+  }
+  
+  .edit-save {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-save:hover {
+    background-color: #2ecc71;
+  }
+  
+
+  /* Adjustments for responsiveness */
+  @media (max-width: 768px) {
+    .expert-profile-container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      flex: none;
+    }
+  
+    .sidebar button {
+      margin-bottom: 5px;
+    }
+  }
+ 
