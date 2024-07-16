@@ -126,18 +126,18 @@
 
 .resource-link {
   display: inline-block;
-  background-color: #21c008;
+  background-color: rgb(127, 38, 210);
   color: #fff;
   text-decoration: none;
   font-size: 1em;
   font-weight: bold;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .resource-link:hover {
-  background-color: #1c9604;
+  background-color: blueviolet;
   color: #fff;
   animation: vibrateX 0.2s linear infinite;
 }

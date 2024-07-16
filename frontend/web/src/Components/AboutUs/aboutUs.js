@@ -7,9 +7,11 @@ import member1 from '../Assets/team-member1.jpg';
 import member2 from '../Assets/team-member2.jpg';
 import member3 from '../Assets/team-member3.jpg';
 import member4 from '../Assets/team-member4.jpg';
+
 const AboutUs = () => {
   return (
     <div className="about-us-page">
+     
       {/* Company Overview Section */}
       <section className="company-overview">
         <div className="overview-content">
@@ -35,23 +37,28 @@ const AboutUs = () => {
         <div className="team-grid">
           <div className="team-member">
             <img src={member1} alt="Team Member 1" className="team-photo" />
-            <h3>Jane Doe</h3>
-            <p>CEO & Founder</p>
+            <h3>Ararsa Derese</h3>
+            <p>backend developer</p>
           </div>
           <div className="team-member">
             <img src={member2} alt="Team Member 2" className="team-photo" />
-            <h3>John Smith</h3>
-            <p>CTO</p>
+            <h3>Aduna kebede</h3>
+            <p>frontend developer</p>
           </div>
           <div className="team-member">
             <img src={member3} alt="Team Member 3" className="team-photo" />
-            <h3>Emily Johnson</h3>
-            <p>Chief Marketing Officer</p>
+            <h3>Feven Alemayehu</h3>
+            <p>content creater</p>
           </div>
           <div className="team-member">
             <img src={member4} alt="Team Member 4" className="team-photo" />
-            <h3>Michael Brown</h3>
-            <p>Head of Product</p>
+            <h3>Melkamu</h3>
+            <p>UI/UX designer</p>
+          </div>
+          <div className="team-member">
+            <img src={member4} alt="Team Member 4" className="team-photo" />
+            <h3>Daniel Mekonnen</h3>
+            <p>UI/UX designer</p>
           </div>
         </div>
       </section>

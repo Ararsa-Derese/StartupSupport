@@ -120,20 +120,20 @@
 
 .tier button, .pricing-button {
   display: inline-block;
-  background-color: #038905;
+  background-color: rgb(123, 36, 204);
   color: #fff;
   text-decoration: none;
   font-size: 1em;
   font-weight: bold;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: background-color 0.3s, color 0.3s;
   animation: bounceIn 1s ease-out;
   border: none;
 }
 
 .tier button:hover, .pricing-button:hover {
-  background-color: #046335;
+  background-color: rgb(107, 21, 187);
   color: #fff;
 }
 
@@ -198,9 +198,7 @@
   font-size: 1.2em;
   color: #333;
 }
-.testimonial:hover{
-  background-color: #08d8a7;
-}
+
 /* FAQs Section */
 /* Base styling for the FAQ section */
 .faqs {

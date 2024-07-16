@@ -1,0 +1,145 @@
+.profile-section, .shared-resources-section, .events-section {
+  margin-bottom: 20px;
+}
+
+h2, h3, h4 {
+  color: #34495e;
+}
+
+.profile-verification {
+  margin-bottom: 15px;
+}
+
+.setupNewEvent-btn {
+  background-color: rgb(125, 38, 206);
+  padding: 5px 10px;
+  margin-top: 10px;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.events-section {
+  padding-left: 30px;
+}
+
+.event-list {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  align-content: center;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card {
+  width: calc(33.333% - 20px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  text-align: center;
+  justify-content: center;
+}
+
+.event-card h3 {
+  margin-top: 0;
+}
+
+.join-event-btn, .setupNewEvent-btn {
+  display: inline-block;
+  background-color:blueviolet;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 20px auto; /* Center button and add margin */
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: auto; /* Adjust width to content */
+}
+
+.join-event-btn:hover, .setupNewEvent-btn:hover {
+  background-color: #9d0fa0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.btn {
+  display: inline-block;
+  text-align: center;
+}
+
+.events-section {
+  animation: fadeIn 1s ease-out;
+}
+
+.event-header {
+  animation: slideInRight 0.5s ease-out;
+}
+
+.upcoming-event-card, .event-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.setupNewEvent-btn:hover {
+  animation: vibrateX 0.5s infinite;
+}
+
+@keyframes vibrateX {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(2px); }
+  50% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

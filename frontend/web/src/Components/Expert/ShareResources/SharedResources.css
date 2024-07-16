@@ -1,0 +1,98 @@
+.shared-resources-display {
+    padding: 20px;
+    background-color: #faf8f8;
+    text-align: center;
+    margin-top: 10px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.share-resources-btnn{
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    align-items: center;    
+    padding: 5px 10px;
+    color: #ffffff;
+    width: 50%;
+    height: 40px;
+
+}
+.resources-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    animation: slideInRight 1s ease-out;
+}
+
+.resource-card {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+}
+.resource-card-btn{
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    align-items: center;    
+    padding: 5px 10px;
+    color: #ffffff;
+    width: 50%;
+    height: 40px;
+}
+.resource-card-btn:hover{
+    animation: vibrateX 0.5s infinite ;
+    background-color: rgb(96, 10, 175);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes vibrateX {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(2px); }
+    50% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
