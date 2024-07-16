@@ -1,0 +1,122 @@
+/* Events.css */
+.events-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.events-list, .static-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.event-card {
+    width: calc(33.333% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-card h3, .event-card p {
+    padding: 0 20px;
+}
+
+.event-card h3 {
+    color: #0056b3; /* Darker shade for better contrast */
+    margin-top: 20px; /* Add space above the title */
+    font-weight: 600; /* Make the title bolder */
+    font-size: 1.5rem;
+}
+
+.event-card p {
+    color: #333; /* Darker text for better readability */
+    margin-bottom: 10px; /* Add space below the paragraph */
+    font-size: 1rem; /* Adjust font size for readability */
+    line-height: 1.5; /* Improve line spacing */
+}
+
+.event-card p:last-child {
+    margin-bottom: 20px; /* Add more space below the last paragraph */
+}
+
+.event-card a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500; /* Make links slightly bolder */
+}
+
+.event-card a:hover {
+    color: #0056b3;
+}
+
+.btn {
+    display: inline-block;
+    background-color: blueviolet;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 20px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem; /* Increase font size for better visibility */
+    font-weight: 500; /* Make text slightly bolder */
+    letter-spacing: 0.05em; /* Add spacing between letters */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+    width: auto; /* Adjust width to content */
+    display: block; /* Ensure it takes its own line */
+    margin: 20px auto; /* Center button and add margin */
+}
+
+.btn:hover {
+    background-color: #059f0d;
+}
+
+.static-cards {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .event-card {
+        width: calc(50% - 20px);
+    }
+
+    .event-card h3, .event-card p {
+        padding: 0 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .event-card {
+        width: 100%; /* Full width cards on small screens */
+    }
+
+    .event-card h3 {
+        font-size: 1.4rem; /* Adjust title size on small screens */
+    }
+
+    .event-card p {
+        font-size: 0.9rem; /* Adjust paragraph size on small screens */
+    }
+}

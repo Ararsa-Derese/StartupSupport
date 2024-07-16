@@ -1,0 +1,58 @@
+.share-resources-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .share-resources-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .share-resources-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .share-resources-form input[type="text"],
+  .share-resources-form textarea,
+  .share-resources-form select,
+  .share-resources-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .share-resources-form textarea {
+    resize: vertical;
+  }
+  
+  .share-resources-form .alert {
+    margin-top: 10px;
+  }
+  
+  .shared-resources-list {
+    margin-top: 30px;
+  }
+  
+  .shared-resources-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .shared-resources-list li {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shared-resources-list h4 {
+    margin: 0 0 5px;
+  }
+  

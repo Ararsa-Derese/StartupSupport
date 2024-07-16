@@ -54,7 +54,7 @@ const ContactUs = () => {
       <h2>Contact Us</h2>
       <div className="contact-form" onSubmit={handleSubmit}>
         <div className="contact-form-group">
-          <label htmlFor="contact-name">Name:</label>
+          
           <div className="contact-input-wrapper">
             <input
               type="text"
@@ -64,11 +64,12 @@ const ContactUs = () => {
               value={formData.name}
               onChange={handleChange}
               required
+              placeholder='Name'
             />
           </div>
         </div>
         <div className="contact-form-group">
-          <label htmlFor="contact-email">Email:</label>
+          
           <div className="contact-input-wrapper">
             <input
               type="email"
@@ -78,11 +79,12 @@ const ContactUs = () => {
               value={formData.email}
               onChange={handleChange}
               required
+              placeholder='Email'
             />
           </div>
         </div>
         <div className="contact-form-group">
-          <label htmlFor="contact-message">Message:</label>
+         
           <div className="contact-textarea-wrapper">
             <textarea
               id="contact-message"
@@ -91,6 +93,7 @@ const ContactUs = () => {
               value={formData.message}
               onChange={handleChange}
               required
+              placeholder='message'
             />
           </div>
         </div>

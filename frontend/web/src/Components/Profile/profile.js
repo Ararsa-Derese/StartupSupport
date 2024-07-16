@@ -9,7 +9,7 @@ import { logout } from '../../features/user';
 const Profile = ({ onLogout }) => {
   const dispatch = useDispatch();
   const { isAuthenticated, user, loading } = useSelector(state => state.user);
-
+  
 	if (!isAuthenticated && !loading && user === null)
 		return <Navigate to='/signup' />;
   // Example profile data (replace with actual profile data from context or backend)
