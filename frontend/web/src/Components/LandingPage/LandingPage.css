@@ -42,6 +42,7 @@
     background-color: rgb(101, 22, 176);
     transition: background-color 0.3s ease;
     text-decoration: none;
+   
   }
   
   .landing-getting-started-btn:hover {
@@ -49,6 +50,7 @@
     transform: scale(1.05);
     text-decoration: none;
     color: white;
+
   }
   
   /* About Us Section */
@@ -153,4 +155,25 @@
     text-align: center;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
   }
+  .contactus-btn{
+    background-color: rgb(101, 18, 179);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+  }
+  .contactus-btn{
+    background-color: rgb(109, 28, 185);
+    color: white;
+  }
+  .contactus-btn:link{
+    text-decoration: none;
+  }
+  .contactus-btn:hover{
+    background-color: rgb(101, 18, 179);
+    color: white;
+    text-decoration: none;
+  }
+  

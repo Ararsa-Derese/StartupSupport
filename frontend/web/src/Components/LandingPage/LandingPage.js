@@ -75,7 +75,7 @@ const LandingPage = () => {
       {/* Call to Action Section */}
       <section className="call-to-action">
         <h2>Ready to Take Your Startup to the Next Level?</h2>
-        <Link to="/contactus" className="btn btn-primary">Contact Us</Link>
+        <Link to="/contactus" className="contactus-btn">Contact Us</Link>
       </section>
     </div>
   );

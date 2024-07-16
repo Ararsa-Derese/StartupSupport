@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './shareResources.css';
-
+import {Link} from 'react-router-dom';
 const ShareResources = () => {
   const [resourceName, setResourceName] = useState('');
   const [resourceDescription, setResourceDescription] = useState('');
@@ -55,7 +55,7 @@ const ShareResources = () => {
       <h2>Share Resources</h2>
       <form className="share-resources-form" onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="resourceName">Resource Name</label>
+          
           <input
             type="text"
             id="resourceName"
@@ -66,7 +66,7 @@ const ShareResources = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="resourceDescription">Resource Description</label>
+         
           <textarea
             id="resourceDescription"
             value={resourceDescription}
@@ -76,7 +76,7 @@ const ShareResources = () => {
           ></textarea>
         </div>
         <div className="form-group">
-          <label htmlFor="resourceCategory">Category</label>
+         
           <select
             id="resourceCategory"
             value={resourceCategory}
@@ -92,7 +92,7 @@ const ShareResources = () => {
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="resourceFile">Upload File</label>
+        
           <input
             type="file"
             id="resourceFile"
@@ -101,24 +101,11 @@ const ShareResources = () => {
           />
         </div>
         {error && <div className="alert alert-danger">{error}</div>}
-        <button type="submit" className="btn btn-primary" disabled={loading}>
+        <button type="submit"className="resource-share-btn" disabled={loading}>
           {loading ? 'Sharing...' : 'Share'}
         </button>
       </form>
-      <div className="shared-resources-list">
-        <h3>Shared Resources</h3>
-        {sharedResources.length === 0 && <p>No resources shared yet.</p>}
-        <ul>
-          {sharedResources.map(resource => (
-            <li key={resource.id}>
-              <h4>{resource.name}</h4>
-              <p>{resource.description}</p>
-              <p><strong>Category:</strong> {resource.category}</p>
-              <p><strong>File:</strong> {resource.fileName}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
+      
     </div>
   );
 };
