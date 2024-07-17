@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Navbar from './Components/Navbar/navbar';
 import Footer from './Components/Footer/footer';
 import Home from './Components/Home/home';
@@ -27,32 +28,33 @@ import LandingPage from './Components/LandingPage/LandingPage';
 import './index.css';
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { user, isAuthenticated } = useSelector(
+		state => state.user
+	);
   const [userType, setUserType] = useState(''); // 'expert' or 'entrepreneur'
 
-  const handleLogin = (type) => {
-    setIsAuthenticated(true);
-    setUserType(type);
-  };
+  // const handleLogin = (type) => {
+  //   setIsAuthenticated(true);
+  //   setUserType(type);
+  // };
 
-  const handleSignup = (type) => {
-    setIsAuthenticated(true);
-    setUserType(type);
-  };
+  // const handleSignup = (type) => {
+  //   setIsAuthenticated(true);
+  //   setUserType(type);
+  // };
 
   const handleLogout = () => {
-    setIsAuthenticated(false);
     setUserType('');
   };
 
   return (
     <Router>
       <ScrollToTop />
-      <Navbar isAuthenticated={isAuthenticated} userType={userType} onLogout={handleLogout} />
+      <Navbar isAuthenticated={isAuthenticated} userType={user && user.role} onLogout={handleLogout} />
       <div className="content">
         <Routes>
           
-          <Route path="/" element={isAuthenticated ? (userType === 'expert' ? <ExpertHome /> : <Home />) : <LandingPage />} />
+          <Route path="/" element={isAuthenticated ? (user && user.role === 'expert' ? <ExpertHome /> : <Home />) : <LandingPage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/professionals" element={<Professionals />} />
           <Route path="/community" element={<Community />} />
@@ -62,14 +64,14 @@ const App = () => {
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/getStarted" element={<GetStarted />} />
           <Route path="/join" element={<JoinNow />} />
-          <Route path="/login" element={!isAuthenticated ? <Login onLogin={handleLogin} /> : <Navigate to="/" replace />} />
-          <Route path="/signup" element={!isAuthenticated ? <Signup onSignup={handleSignup} /> : <Navigate to="/" replace />} />
-          <Route path="/signup/expert" element={<ExpertSignup onSignup={handleSignup} />} />
-          <Route path="/signup/entrepreneur" element={<EntrepreneurSignup onSignup={handleSignup} />} />
-          <Route path="/profile/expert" element={isAuthenticated && userType === 'expert' ? <ExpertProfile /> : <Navigate to="/login" replace />} />
-          <Route path="/profile/entrepreneur" element={isAuthenticated && userType === 'entrepreneur' ? <EntrepreneurProfile /> : <Navigate to="/login" replace />} />
-          <Route path="/share-resources" element={isAuthenticated && userType === 'expert' ? <ShareResources /> : <Navigate to="/login" replace />} />
-          <Route path="/setup-event" element={isAuthenticated && userType === 'expert' ? <SetupEvent /> : <Navigate to="/login" replace />} />
+          <Route path="/login" element={!isAuthenticated ? <Login /> : <Navigate to="/" replace />} />
+          <Route path="/signup" element={!isAuthenticated ? <Signup /> : <Navigate to="/" replace />} />
+          <Route path="/signup/expert" element={<ExpertSignup  />} />
+          <Route path="/signup/entrepreneur" element={<EntrepreneurSignup />} />
+          <Route path="/profile/expert" element={isAuthenticated && (user && user.role === 'expert') ? <ExpertProfile /> : <Navigate to="/login" replace />} />
+          <Route path="/profile/entrepreneur" element={isAuthenticated && (user && user.role === 'entrepreneur') ? <EntrepreneurProfile /> : <Navigate to="/login" replace />} />
+          <Route path="/share-resources" element={isAuthenticated && (user && user.role === 'expert') ? <ShareResources /> : <Navigate to="/login" replace />} />
+          <Route path="/setup-event" element={isAuthenticated && (user && user.role === 'expert') ? <SetupEvent /> : <Navigate to="/login" replace />} />
           <Route path="/events" element={<Events />} />
         </Routes>
       </div>

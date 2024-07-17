@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Home/home.css'; 
+import './ExpertHome.css'; 
 import mentorship from '../Assets/mentorship.jpg'; 
 import events from '../Assets/events.jpg'; 
 import network from '../Assets/network.jpg'; 
@@ -10,7 +10,7 @@ const ExpertHomePage = () => {
   return (
     <div className="homepage">
       {/* Hero Section */}
-      <section className="hero">
+      <section className="Experthero">
         <div className="hero-content">
           <h1>Welcome to Your Expert Hub</h1>
           <p>Empower others with your expertise and expand your professional reach.</p>

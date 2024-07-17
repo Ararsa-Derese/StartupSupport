@@ -36,7 +36,7 @@ const professionalsData = [
   {
     id: 5,
     name: 'Sarah Wilson',
-    category: 'Delala Professional',
+    category: 'Marketing Expert',
     description: 'Skilled in local business and market development.',
     image: sara,
   },

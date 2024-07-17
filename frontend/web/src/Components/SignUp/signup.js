@@ -51,7 +51,7 @@ const validateForm = () => {
   return (
     <div className="signup-container">
       <div className="signup-form">
-        <h2>{userType === 'expert' ? 'Expert Sign Up' : 'Entrepreneur Sign Up'}</h2>
+        <h2>Sign Up</h2>
         <form onSubmit={onSubmit}>
           
         <div className="signup-form-group">
@@ -134,10 +134,10 @@ const validateForm = () => {
 
             {userType === 'expert' && (
             <div className="signup-form-group">
-              <label htmlFor="field_of_experties"></label>
+              <label htmlFor="field_of_expertise"></label>
               <input
                 type="text"
-                name="field_of_experties"
+                name="field_of_expertise"
                 value={field_of_expertise}
                 onChange={onChange}
                 required

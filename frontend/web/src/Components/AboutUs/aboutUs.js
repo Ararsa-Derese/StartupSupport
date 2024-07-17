@@ -3,10 +3,11 @@ import React from 'react';
 import './aboutUs.css'; 
 import { Link } from 'react-router-dom';
 import overview from '../Assets/company-overview.jpg';
-import member1 from '../Assets/team-member1.jpg';
-import member2 from '../Assets/team-member2.jpg';
-import member3 from '../Assets/team-member3.jpg';
-import member4 from '../Assets/team-member4.jpg';
+import member1 from '../Assets/me.jpg';
+import member2 from '../Assets/aduna.jpg';
+import member3 from '../Assets/Feven.png';
+import member4 from '../Assets/Melke.png';
+import member5 from '../Assets/Dani.jpg';
 
 const AboutUs = () => {
   return (
@@ -56,7 +57,7 @@ const AboutUs = () => {
             <p>UI/UX designer</p>
           </div>
           <div className="team-member">
-            <img src={member4} alt="Team Member 4" className="team-photo" />
+            <img src={member5} alt="Team Member 5" className="team-photo" />
             <h3>Daniel Mekonnen</h3>
             <p>UI/UX designer</p>
           </div>

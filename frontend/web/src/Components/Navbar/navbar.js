@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate ,Navigate} from 'react-router-dom';
 import './navbar.css';
 import logo from '../Assets/logo.png';
 import menu from '../Assets/menu.png';
+import { logout } from '../../features/user';
+import { useSelector, useDispatch } from 'react-redux';
 
-const Navbar = ({ isAuthenticated, userType, onLogout }) => {
+const Navbar = () => {
+  const { user,isAuthenticated } = useSelector(state => state.user);
   const [searchQuery, setSearchQuery] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   
-  const handleLogout = () => {
-    onLogout();
-    navigate('/login');
-  };
+  
+
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -29,7 +31,8 @@ const Navbar = ({ isAuthenticated, userType, onLogout }) => {
   const closeMenu = () => {
     setMenuOpen(false);
   };
-
+ if (!isAuthenticated) 
+    <Navigate to="/" />;
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -42,7 +45,7 @@ const Navbar = ({ isAuthenticated, userType, onLogout }) => {
       </button>
       {isAuthenticated ? (
         <div className={`navbar-links ${menuOpen ? 'active' : ''}`}>
-          {userType === 'expert' ? (
+          {user && user.role === 'expert' ? (
             <>
              
               <Link to="/" className="navbar-item" onClick={closeMenu}>Home</Link>
@@ -75,8 +78,8 @@ const Navbar = ({ isAuthenticated, userType, onLogout }) => {
         </div>
       )}
      {isAuthenticated ? (<div className='profile-button'>
-           <Link to={userType === 'expert' ? "/profile/expert" : "/profile/entrepreneur"} className="navbar-item" onClick={closeMenu}>Profile</Link>
-            <button onClick={handleLogout} className="navbar-item navbar-logout">Logout</button>
+           <Link to={user && user.role === 'expert' ? "/profile/expert" : "/profile/entrepreneur"} className="navbar-item" onClick={closeMenu}>Profile</Link>
+            <button onClick={() => dispatch(logout())} className="navbar-item navbar-logout">Logout</button>
             </div>):<></>}
 
     </nav>

@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { resetRegistered, login } from '../../features/user.js';
+import './login.css';
 import Google from '../Assets/google-icon.png';
 import Github from '../Assets/github-icon.png'
-import './login.css';
 
-const LoginPage = ({ onLogin }) => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
-  const [loading, setLoading] = useState(false);
+
+const LoginPage = () => {
+  const dispatch = useDispatch();
+	const { loading, isAuthenticated, registered } = useSelector(
+		state => state.user
+	);
+
+	const [formData, setFormData] = useState({
+		email: '',
+		password: '',
+	});
   const [error, setError] = useState('');
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+		if (registered) dispatch(resetRegistered());
+	}, [registered]);
 
   const { email, password } = formData;
 
@@ -20,22 +30,10 @@ const LoginPage = ({ onLogin }) => {
   };
 
   const onSubmit = e => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      if (email === 'expert@example.com' && password === 'password') {
-        setIsAuthenticated(true);
-        onLogin('expert');
-      } else if (email === 'entrepreneur@example.com' && password === 'password') {
-        setIsAuthenticated(true);
-        onLogin('entrepreneur');
-      } else {
-        setError('Invalid email or password. Please try again.');
-      }
-      setLoading(false);
-    }, 1000); // Simulating async request
-  };
+		e.preventDefault();
 
+		dispatch(login({ email, password }));
+	};
   if (isAuthenticated) {
     return <Navigate to="/" />;
   }
