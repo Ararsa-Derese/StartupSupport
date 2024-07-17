@@ -36,60 +36,63 @@ At Milka StartupSupport, our mission is to empower African entrepreneurs by prov
 
 # Getting Started
 
-To get started Follow the steps:
-1. clone the repository
-```
-git clone git@github.com:Ararsa-Derese/StartupSupport.git
-```
-## Setting up the Backend
-2. Navigate to backend repository
+To get started, follow the steps:
 
-```
-cd backend/
-```
+1. Clone the repository and navigate to the folder:
+   ```bash
+   git clone git@github.com:Ararsa-Derese/StartupSupport.git
+   cd StartupSupport
+   ```
 
-3. Create a virtual env and activate
-```
-python3 -m venv env
-source env/bin/activate
-```
-4. install requirments
-```
-pip install -r requirements.txt
-```
-5. Run the server 
-```
-python manage.py runserver
-```
-## Setting up the Front-end
+2. Setting up the Backend:
+   - Navigate to the backend repository:
+	 ```bash
+	 cd backend/
+	 ```
+   - Create a virtual environment and activate it:
+	 ```bash
+	 python3 -m venv env
+	 source env/bin/activate
+	 ```
+   - Install the requirements:
+	 ```bash
+	 pip install -r requirements.txt
+	 ```
+   - Migrate the database:
+	 ```bash
+	 python manage.py migrate
+	 ```
+   - Run the server:
+	 ```bash
+	 python manage.py runserver
+	 ```
 
-6. Open another terminal and navigate to web folder
+3. Setting up the Front-end:
+   - Open another terminal and navigate to the web folder:
+	 ```bash
+	 cd frontend/web
+	 ```
+   - Install necessary dependencies:
+	 ```bash
+	 npm install
+	 ```
+   - Build:
+	 ```bash
+	 npm run build
+	 ```
+   - Navigate to the parent folder (frontend):
+	 ```bash
+	 cd ..
+	 ```
+   - Install necessary dependencies for the Express:
+	 ```bash
+	 npm install
+	 ```
+   - Run the server:
+	 ```bash
+	 npm start
+	 ```
 
-```
-cd frontend/web
-```
-7. Install necessary dependencies
 
-``` 
-npm install
-```
-8. Build
-```
-npm run build
-```
-9. Navigate to Parent folder (frontend)
-
-```
-cd ..
-```
-10. Install necessary dependencies for the Express
-
-```
-npm install
-```
-11. Run the Server
-```
-npm start
-```
 
 
