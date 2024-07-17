@@ -2,7 +2,13 @@
 ## Empowering African Entrepreneurs
 
 Welcome to StartupSupport, a platform dedicated to empowering African entrepreneurs by bridging the gap between innovative business ideas and the expertise required to bring them to life. Our mission is to provide essential guidance, resources, and networking opportunities to support entrepreneurs at every stage of their journey.
+## Table of Contents
 
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Our Mission](#our-mission)
+- [Getting Started](#getting-started)
+  
 ## Project Overview
 StartupSupport aims to connect aspiring entrepreneurs with seasoned experts, offering a comprehensive suite of tools and resources to foster business growth and development. Our platform features an Integrated Mentorship and Advisory Program, as well as a Comprehensive Networking and Resource Hub, tailored to meet the unique needs of African startups.
 
